@@ -1,0 +1,26 @@
+spring:
+   cloud:
+      stream:
+         bindings:
+            process-in-0:
+               destination: reservation-command
+               consumer:
+                  maxAttempts: 1
+            process-out-0:
+               destination: reservation-event
+
+         kafka:
+            binder:
+               transaction:
+                  transaction-id-prefix: reservation-
+                  producer:
+                     configuration:
+                        retries: 1
+                        acks: all
+   datasource:
+      url: jdbc:postgresql://localhost:5432/spring_test
+      username: springapp
+
+   jpa:
+      hibernate:
+         ddl-auto: create-drop
