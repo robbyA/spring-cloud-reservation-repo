@@ -8,7 +8,7 @@ spring:
     config:
       server:
            git:
-             uri: ~/github/spring-cloud-reservation-project/config-service/config
+             uri: ~/github/spring-cloud-reservation-project/config
   devtools:
     livereload:
       enabled: true
