@@ -2,19 +2,26 @@ server:
   port: 8888
 
 spring:
-  profiles:
-    active: native
   cloud:
     config:
       server:
-           git:
-             uri: ~/github/spring-cloud-reservation-project/config
+            git:
+               uri: https://github.com/robbyA/reservation-config-repo  
+               skipSslValidation: true
+          
+         
+              
+                     
+         #    uri: ~/github/spring-cloud-reservation-project/config-service/config
   devtools:
     livereload:
       enabled: true
   application:
      name: config-service
 
+#  profiles:
+#     active: native
+  
 #eureka:
 #   client:
 #      serviceUrl:

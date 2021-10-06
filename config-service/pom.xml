@@ -5,18 +5,21 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.2.RELEASE</version>
+		<version>2.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
+	<groupId>net.robbya</groupId>
 	<artifactId>config-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>config-service</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Spring Cloud Configuration Server project</description>
 
 	<properties>
-		<java.version>1.8</java.version>
-		<spring-cloud.version>Hoxton.SR6</spring-cloud.version>
+		<java.version>11</java.version>
+		<spring-cloud.version>2020.0.4</spring-cloud.version>		
+        <docker.image.prefix>frtande</docker.image.prefix>
+        <docker.image.name>config-server</docker.image.name>
+		
 	</properties>
 
 	<dependencies>
@@ -67,6 +70,39 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			
+			 <plugin>
+			    <groupId>io.fabric8</groupId>
+			    <artifactId>docker-maven-plugin</artifactId>
+			    <version>0.37.0</version> 
+			    <configuration>    
+			        <verbose>true</verbose>
+			        <images>
+			            <image>
+			                <name>${docker.image.prefix}/${docker.image.name}</name>
+			                <build>
+			                    <dockerFileDir>${project.basedir}</dockerFileDir>
+			                    <assembly>
+			                        <descriptorRef>artifact</descriptorRef>
+			                    </assembly>
+			                    <tags>
+			                        <tag>latest</tag>
+			                    </tags>
+			                </build>
+			            </image>
+			        </images>
+			    </configuration>
+			   <executions>
+			     <execution>
+			        <id>default</id>
+			        <phase>install</phase>
+			        <goals>
+			            <goal>build</goal>
+			            <goal>push</goal>
+			        </goals>
+			     </execution>
+			   </executions>
+			 </plugin>
 		</plugins>
 	</build>
 
