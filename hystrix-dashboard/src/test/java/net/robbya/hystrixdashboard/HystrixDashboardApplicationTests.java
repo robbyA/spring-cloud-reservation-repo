@@ -1,4 +1,4 @@
-package com.example.hystrixdashboard;
+package net.robbya.hystrixdashboard;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

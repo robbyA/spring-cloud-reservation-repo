@@ -1,4 +1,4 @@
-package com.example.eurekaservice;
+package net.robbya.eurekaservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

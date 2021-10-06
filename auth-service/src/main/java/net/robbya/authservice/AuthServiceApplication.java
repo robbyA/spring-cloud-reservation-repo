@@ -1,4 +1,4 @@
-package com.example.authservice;
+package net.robbya.authservice;
 
 
 import java.util.stream.Stream;

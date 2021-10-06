@@ -1,4 +1,4 @@
-package com.example.reservationclient;
+package net.robbya.reservationclient;
 
 //import org.springframework.beans.factory.annotation.Required;
 //import javax.xml.ws.RequestWrapper;
@@ -106,7 +106,7 @@ class ReservationApiGateway {
 
 	
 	@HystrixCommand(defaultFallback = "fallback", commandProperties = {
-		@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1000") })
+	@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1000") })
 	@GetMapping("/names")
 	// @HystrixCommand(fallbackMethod = "fallback")
 	public Collection<String> names() {

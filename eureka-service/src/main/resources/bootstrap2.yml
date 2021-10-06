@@ -1,10 +1,10 @@
 spring:
   application:
     name: eureka-service
-#  cloud:
-#    config:
-#      uri: http://localhost:8888
-#      fail-fast: true
+  cloud:
+    config:
+      uri: http://config.robbya.net
+      fail-fast: true
 eureka:
   client:
      serviceUrl:

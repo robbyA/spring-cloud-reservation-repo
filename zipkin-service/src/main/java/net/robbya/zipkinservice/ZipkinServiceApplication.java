@@ -1,4 +1,4 @@
-package com.example.zipkinservice;
+package net.robbya.zipkinservice;
 
 
 import org.springframework.boot.SpringApplication;

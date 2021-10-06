@@ -1,4 +1,4 @@
-package com.example.authservice.config;
+package net.robbya.authservice.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

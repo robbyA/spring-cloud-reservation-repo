@@ -3,6 +3,7 @@ spring:
       stream:
          bindings:
             process-in-0:
+               group: res-consumer
                destination: reservation-command
                consumer:
                   maxAttempts: 1
@@ -24,3 +25,10 @@ spring:
    jpa:
       hibernate:
          ddl-auto: create-drop
+   kafka:
+      consumer:
+         group-id: res-consumer
+#logging:
+#   level:
+#      com:
+#         example: debug
